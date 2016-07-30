@@ -1,7 +1,7 @@
 (define (improve guess x)
-  (averate guess (/ x guess)))
+  (average guess (/ x guess)))
 
-(define (averate x y)
+(define (average x y)
   (/ (+ x y) 2))
 
 (define (good-enough? guess x)
