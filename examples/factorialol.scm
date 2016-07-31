@@ -11,7 +11,7 @@
 
 ;; WAT! this is recursion again!
 ;; No, just because the procedure is calling
-;; itself doesn't mean it's recursive.
+;; itself doesn't mean the process recursive.
 (define (fact-itr product counter max-count)
   (if (> counter max-count)
       product
