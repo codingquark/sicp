@@ -9,8 +9,12 @@
 
 (define (expt-itr x n Y)
   (cond ((= n 0) Y)
-        ((even? n) (expt-itr (* x x) (floor (/ n 2)) Y))
-        (else (expt-itr (* x x) (floor (/ n 2)) (* x Y)))))
+        ((even? n) (expt-itr (* x x)
+                             (floor (/ n 2))
+                             Y))
+        (else (expt-itr (* x x)
+                        (floor (/ n 2))
+                        (* x Y)))))
 
 (test 243 (expt 3 5))
 (test 1024 (expt 2 10))
