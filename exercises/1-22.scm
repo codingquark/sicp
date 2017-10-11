@@ -1,8 +1,6 @@
 (use test (only micro-benchmark %gettime/microsecs))
 
 (define (timed-prime-test n)
-  (newline)
-  (display n)
   (start-prime-test n (runtime)))
 
 (define (start-prime-test n start-time)
@@ -10,6 +8,7 @@
       (report-prime (- (runtime) start-time))))
 
 (define (report-prime elapsed-time)
+  (newline)
   (display " *** ")
   (display elapsed-time))
 
