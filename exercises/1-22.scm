@@ -51,6 +51,6 @@
           (display " Done "))))
 
 (search-for-primes 1001 1020) ; ~30us
-(search-for-primes 10001 10039) ; ~900ms
+(search-for-primes 10001 10039) ; ~90ms
 (search-for-primes 100001 100045) ; ~200ms
 (search-for-primes 1000001 1000039) ; ~700ms
