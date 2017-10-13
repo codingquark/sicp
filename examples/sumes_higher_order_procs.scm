@@ -49,7 +49,7 @@
 
 ;; Calculates definite integral of a function $f$ between
 ;; limits a and b
-;; $\int_a^b \mathit{f} = [\mathit{f}\left(\mathit{a} + \frac{dx}{2}\right) + \mathit{f}\left(\mathit{a} + dx + \frac{dx}{2}\right) + \mathit{f}\left(\mathit{a} + 2dx + \frac{dx}{2}\right)]$
+;; $\int_a^b \mathit{f} = [\mathit{f}\left(\mathit{a} + \frac{dx}{2}\right) + \mathit{f}\left(\mathit{a} + dx + \frac{dx}{2}\right) + \mathit{f}\left(\mathit{a} + 2dx + \frac{dx}{2}\right)]dx$
 (define (integral f a b dx)
   (define (add-dx x) (+ x dx))
   (* (sum f (+ a (/ dx 2.0)) add-dx b)
