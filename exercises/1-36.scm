@@ -17,10 +17,12 @@
 (define (average x y)
   (/ (+ x y) 2))
 
-(test 4.55554044840216
-      (fixed-point (lambda (x) (/ (log 1000) (log x)))
-                   10.0)) ;; 33 iterations
+(define (x-raised-to-x y)
+  (fixed-point (lambda (x) (/ (log y) (log x)))
+               10.0))
+(test 4.55554044840216 (x-raised-to-x 1000)) ;; 33 iterations
 
-(test 4.55554044840216
-      (fixed-point (lambda (x) (average x (/ (log 1000) (log x))))
-                   10.0)) ;; 8 iterations
+(define (x-raised-to-x y)
+  (fixed-point (lambda (x) (average x (/ (log y) (log x))))
+               10.0))
+(test 4.55554044840216 (x-raised-to-x 1000)) ;; 8 iterations
