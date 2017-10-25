@@ -1,10 +1,10 @@
 (use test)
 
-(define tolerence 0.00001)
+(define tolerance 0.00001)
 
 (define (fixed-point f first-guess)
   (define (close-enough? v1 v2)
-    (< (abs (- v1 v2)) tolerence))
+    (< (abs (- v1 v2)) tolerance))
   (define (try guess)
     (let ((next (f guess)))
       (display guess)
