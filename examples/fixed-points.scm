@@ -10,14 +10,29 @@
           (try next))))
   (try first-guess))
 
+(define (average x y)
+  (/ (+ x y) 2))
+
 (define (sqrt x)
   (fixed-point (lambda (y) (average y (/ x y)))
                1.0))
-
-(define (average x y)
-  (/ (+ x y) 2))
 
 ;; Some tests
 (fixed-point cos 1.0)
 (fixed-point (lambda (y) (+ (sin y) (cos y)))
              1.0)
+
+;; Procedure as return values
+
+(define (average-damp f)
+  (lambda (x) (average x (f x))))
+
+;; See how cleaner it is.
+;; Now we know that we are average damping the y ↦ x/y
+(define (sqrt x)
+  (fixed-point (average-damp (lambda (y) (/ x y)))
+               1.0))
+
+(define (cube-root x)
+  (fixed-point (average-damp (lambda (y) (/ x (square y))))
+               1.0))
