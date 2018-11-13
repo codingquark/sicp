@@ -1,5 +1,4 @@
 (define (make-accumulator initial-value)
-  (let ((sum initial-value))
-    (lambda (n)
-      (begin (set! sum (+ sum n))
-             sum))))
+  (lambda (num)
+    (begin (set! initial-value (+ initial-value num))
+           initial-value)))
