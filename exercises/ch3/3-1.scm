@@ -1,4 +1,4 @@
-(define (make-accumulator initial-value)
+(define (make-accumulator sum)
   (lambda (num)
-    (begin (set! initial-value (+ initial-value num))
-           initial-value)))
+    (begin (set! sum (+ sum num))
+           sum)))
